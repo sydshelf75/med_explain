@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { analyzeWithClaude } from "@/lib/claudeAnalyzer";
 import { parseRawText } from "@/lib/medicalParser";
 import { generateExplanations } from "@/lib/explanationEngine";
 import { translateTexts } from "@/lib/translator";
@@ -41,7 +42,6 @@ export async function POST(request: NextRequest) {
         // Extract text via Santa AI service
         const fileType = file.type === "application/pdf" ? "pdf" : file.type.split("/")[1];
         const rawText = await extractViaSantaAi(file, fileType);
-
         if (!rawText || rawText.trim().length < 10) {
             return NextResponse.json(
                 {
@@ -53,11 +53,17 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        // Parse medical test data from raw text
-        const parsedTests = parseRawText(rawText);
-
-        // Generate explanations
-        const explainedTests = generateExplanations(parsedTests);
+        // Analyze with Claude AI (primary), fallback to regex parser
+        let explainedTests;
+        try {
+            console.log("Attempting Claude AI analysis...");
+            explainedTests = await analyzeWithClaude(rawText);
+            console.log(`Claude AI analysis complete — ${explainedTests.length} test(s) found.`);
+        } catch (claudeError) {
+            console.warn("Claude AI analysis failed, falling back to regex parser:", claudeError);
+            const parsedTests = parseRawText(rawText);
+            explainedTests = generateExplanations(parsedTests);
+        }
 
         // Translate if needed
         let finalTests = explainedTests;
