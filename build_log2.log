@@ -1,0 +1,114 @@
+﻿Γû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+node.exe : Turbopack 
+build encountered 1 
+warnings:
+At line:1 char:1
++ & "C:\Program Files
+\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Turbopa   
+ ck build encount    
+ered 1 warnings:    
+:String) [], Rem    
+oteException
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+./src/lib/translator.
+ts:28:45
+Module not found: 
+Can't resolve 
+'lingo.dev'
+[0m [90m 26 |[39m
+ [90m 27 |[39m     
+[36mtry[39m {
+[31m[1m>[22m[39m
+[90m 28 |[39m       
+  [36mconst[39m { 
+[33mLingoDotDevEngine
+[39m } [33m=[39m 
+[36mawait[39m [36m
+import[39m([32m"lin
+go.dev"[39m)[33m;[
+39m
+ [90m    |[39m     
+                     
+                   [
+31m[1m^[22m[39m[3
+1m[1m^[22m[39m[31
+m[1m^[22m[39m[31m
+[1m^[22m[39m[31m
+[1m^[22m[39m[31m[
+1m^[22m[39m[31m[1
+m^[22m[39m[31m[1m
+^[22m[39m[31m[1m^
+[22m[39m[31m[1m^
+[22m[39m[31m[1m^[
+22m[39m[31m[1m^[2
+2m[39m[31m[1m^[22
+m[39m[31m[1m^[22m
+[39m[31m[1m^[22m
+[39m[31m[1m^[22m[
+39m[31m[1m^[22m[3
+9m[31m[1m^[22m[39
+m[31m[1m^[22m[39m
+ [90m 29 |[39m     
+    [36mconst[39m 
+engine [33m=[39m 
+[36mnew[39m [33mLi
+ngoDotDevEngine[39m(
+{
+ [90m 30 |[39m     
+        
+apiKey[33m,[39m
+ [90m 31 |[39m     
+    })[33m;[39m[0m
+
+
+
+Import trace:
+  App Route:
+    ./src/lib/transla
+tor.ts
+    ./src/app/api/ana
+lyze/route.ts
+
+https://nextjs.org/do
+cs/messages/module-no
+t-found
+
+
+Γ£ô Compiled successfully in 6.1s
+  Running TypeScript ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/8) ...
+  Generating static pages using 11 workers (2/8) 
+  Generating static pages using 11 workers (4/8) 
+  Generating static pages using 11 workers (6/8) 
+Γ£ô Generating static pages using 11 workers (8/8) in 559.3ms
+  Finalizing page optimization ...
+
+Route (app)
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ ╞Æ /api/analyze
+Γö£ ╞Æ /api/translate
+Γö£ Γùï /report
+Γöö Γùï /upload
+
+
+Γùï  (Static)   prerendered as static content
+╞Æ  (Dynamic)  server-rendered on demand
+

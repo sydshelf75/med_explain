@@ -1,0 +1,2 @@
+﻿src/app/api/analyze/route.ts(99,54): error TS2339: Property 'default' does not exist on type 'typeof import("D:/My_Shelf/hackathon/med_explain/node_modules/pdf-parse/dist/pdf-parse/esm/index")'.
+src/lib/translator.ts(28,52): error TS2307: Cannot find module 'lingo.dev' or its corresponding type declarations.
