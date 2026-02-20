@@ -1,0 +1,88 @@
+{
+  "header": {
+    "home": "Startseite",
+    "uploadReport": "Bericht hochladen"
+  },
+  "hero": {
+    "badge": "Klarheit statt Verwirrung",
+    "titleLine1": "Verstehen Sie Ihre",
+    "titleHighlight": "medizinischen Berichte",
+    "titleLine2": "klar und gelassen",
+    "subtitle": "MedExplain wandelt komplexes Laborbericht-Fachjargon in einfache, leicht verständliche Erklärungen um – übersetzt in Ihre Muttersprache.",
+    "cta": "Bericht hochladen"
+  },
+  "howItWorks": {
+    "title": "So funktioniert's",
+    "subtitle": "Drei einfache Schritte zum Verständnis Ihres Berichts",
+    "step1Title": "Bericht hochladen",
+    "step1Desc": "Laden Sie Ihren Laborbericht hoch (PDF, JPG oder PNG). Wir extrahieren die Daten sicher – nichts wird gespeichert.",
+    "step2Title": "Wir analysieren und erklären",
+    "step2Desc": "Unsere Engine identifiziert Testwerte, gleicht sie mit Normalbereichen ab und erstellt eine verständliche Erklärung.",
+    "step3Title": "In Ihrer Sprache lesen",
+    "step3Desc": "Erhalten Sie Ihre Ergebnisse in Ihrer bevorzugten Sprache übersetzt – powered by lingo.dev."
+  },
+  "languages": {
+    "title": "Unterstützte Sprachen",
+    "subtitle": "Wir sprechen Ihre Sprache – damit Ihr Gesundheitsbericht es auch kann"
+  },
+  "trust": {
+    "privacyTitle": "Datenschutz an erster Stelle",
+    "privacyDesc": "Ihre Berichte werden im Arbeitsspeicher verarbeitet und niemals gespeichert. Wir löschen alles nach der Analyse.",
+    "noDiagTitle": "Keine Diagnosen",
+    "noDiagDesc": "Wir erklären, diagnostizieren aber nie. MedExplain empfiehlt immer, Ihren Arzt zu konsultieren.",
+    "aiTitle": "KI-gestützt",
+    "aiDesc": "Intelligente Analyse und Lokalisierung powered by lingo.dev für kontextbewusste Übersetzungen."
+  },
+  "upload": {
+    "title": "Bericht hochladen",
+    "subtitle": "Laden Sie Ihren Laborbericht hoch und wir erklären ihn in einfachen Worten",
+    "dragActive": "Legen Sie Ihre Datei hier ab",
+    "dragDefault": "Ziehen Sie Ihren Bericht hierher",
+    "browseHint": "oder klicken Sie zum Durchsuchen • PDF, JPG, PNG (max. 10 MB)",
+    "fileError": "Bitte laden Sie eine PDF-, JPG- oder PNG-Datei hoch (max. 10 MB).",
+    "langLabel": "Erklärungssprache",
+    "langHint": "Wir übersetzen die Erklärungen in diese Sprache",
+    "privacyTitle": "Ihre Privatsphäre ist geschützt",
+    "privacyDesc": "Berichte werden im Arbeitsspeicher verarbeitet und sofort gelöscht. Wir speichern niemals Ihre medizinischen Daten.",
+    "analyzing": "Ihr Bericht wird analysiert ...",
+    "submitBtn": "Meinen Bericht erklären",
+    "genericError": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "analysisError": "Analyse fehlgeschlagen. Bitte versuchen Sie es erneut."
+  },
+  "report": {
+    "loading": "Ihre Ergebnisse werden geladen ...",
+    "noTestsTitle": "Testdaten konnten nicht extrahiert werden",
+    "noTestsDesc": "Wir konnten keine gängigen medizinischen Tests in Ihrem Bericht identifizieren. Dies kann bei handschriftlichen Berichten, unklaren Scans oder spezialisierten Tests vorkommen, die wir noch nicht unterstützen.",
+    "tryAnother": "Anderen Bericht versuchen",
+    "backToUpload": "Anderen Bericht hochladen",
+    "pageTitle": "Ihr Bericht,",
+    "pageTitleHighlight": "erklärt",
+    "resultsFound": "Wir haben Ihren medizinischen Bericht analysiert und",
+    "testResults": "Testergebnisse gefunden.",
+    "resultsExplain": "Hier ist, was sie in einfacher Sprache bedeuten.",
+    "detailedResults": "Detaillierte Ergebnisse"
+  },
+  "testCard": {
+    "normal": "Normal",
+    "low": "Niedrig",
+    "high": "Hoch",
+    "borderline": "Grenzwertig",
+    "yourResult": "Ihr Ergebnis",
+    "normalRange": "Normalbereich",
+    "whatThisMeans": "Was das bedeutet"
+  },
+  "disclaimer": {
+    "bannerTitle": "Wichtiger Haftungsausschluss",
+    "bannerText": "MedExplain bietet vereinfachte Erklärungen ausschließlich zu Bildungszwecken. Es diagnostiziert keine Erkrankungen und empfiehlt keine Behandlungen. Konsultieren Sie immer eine qualifizierte medizinische Fachkraft für medizinischen Rat.",
+    "inline": "Nur zu Bildungszwecken – kein Ersatz für medizinischen Rat."
+  },
+  "footer": {
+    "disclaimerLabel": "Haftungsausschluss:",
+    "disclaimerText": "MedExplain ist ausschließlich ein Bildungsinstrument. Es bietet keine medizinischen Diagnosen, Behandlungsempfehlungen oder professionelle medizinische Meinungen. Konsultieren Sie bei medizinischen Anliegen immer eine qualifizierte medizinische Fachkraft. Die bereitgestellten Erklärungen sind vereinfacht und erfassen möglicherweise nicht den vollständigen klinischen Kontext.",
+    "copyright": "MedExplain – Verstehen Sie Ihre Befunde klar und deutlich.",
+    "poweredBy": "Übersetzungen bereitgestellt von"
+  },
+  "rangeBar": {
+    "normal": "Normal:"
+  }
+}

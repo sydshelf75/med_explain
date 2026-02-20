@@ -17,6 +17,7 @@ import LanguageSelector from "@/components/LanguageSelector";
 import TestResultCard from "@/components/TestResultCard";
 import type { LanguageCode } from "@/lib/medicalDictionary";
 import type { TestStatus } from "@/lib/explanationEngine";
+import { useTranslation } from "@/i18n/I18nProvider";
 
 interface TestResult {
     testName: string;
@@ -34,6 +35,7 @@ interface AnalysisResults {
 
 export default function ReportPage() {
     const router = useRouter();
+    const { t } = useTranslation();
     const [results, setResults] = useState<AnalysisResults | null>(null);
     const [language, setLanguage] = useState<LanguageCode>("en");
     const [isTranslating, setIsTranslating] = useState(false);
@@ -109,7 +111,7 @@ export default function ReportPage() {
                 <main className="flex-1 flex items-center justify-center">
                     <div className="text-center">
                         <Loader2 size={40} className="animate-spin mx-auto mb-4" style={{ color: 'var(--primary)' }} />
-                        <p style={{ color: 'var(--text-secondary)' }}>Loading your results...</p>
+                        <p style={{ color: 'var(--text-secondary)' }}>{t("report.loading")}</p>
                     </div>
                 </main>
             </div>
@@ -130,12 +132,10 @@ export default function ReportPage() {
                             <FileWarning size={28} />
                         </div>
                         <h2 className="text-2xl font-bold mb-3" style={{ color: 'var(--foreground)' }}>
-                            Unable to extract test data
+                            {t("report.noTestsTitle")}
                         </h2>
                         <p className="mb-6" style={{ color: 'var(--text-secondary)' }}>
-                            We couldn&apos;t identify common medical tests in your report.
-                            This could happen with handwritten reports, unclear scans, or
-                            specialized tests we don&apos;t yet support.
+                            {t("report.noTestsDesc")}
                         </p>
                         <Link
                             href="/upload"
@@ -143,7 +143,7 @@ export default function ReportPage() {
                             style={{ background: 'linear-gradient(135deg, var(--primary), var(--primary-dark))' }}
                         >
                             <Upload size={16} />
-                            Try another report
+                            {t("report.tryAnother")}
                         </Link>
                     </div>
                 </main>
@@ -169,15 +169,15 @@ export default function ReportPage() {
                                 style={{ color: 'var(--text-muted)' }}
                             >
                                 <ArrowLeft size={14} />
-                                Upload another report
+                                {t("report.backToUpload")}
                             </Link>
                             <h1 className="text-4xl font-extrabold tracking-tight" style={{ color: 'var(--foreground)' }}>
-                                Your Report,{" "}
-                                <span style={{ color: 'var(--primary)' }}>Explained</span>
+                                {t("report.pageTitle")}{" "}
+                                <span style={{ color: 'var(--primary)' }}>{t("report.pageTitleHighlight")}</span>
                             </h1>
                             <p className="mt-2 text-base" style={{ color: 'var(--text-secondary)' }}>
-                                We analyzed your medical report and found <strong>{results.tests.length}</strong> test results.
-                                Here&apos;s what they mean in plain language.
+                                {t("report.resultsFound")} <strong>{results.tests.length}</strong> {t("report.testResults")}{" "}
+                                {t("report.resultsExplain")}
                             </p>
                         </div>
 
@@ -194,7 +194,7 @@ export default function ReportPage() {
                     <div className="flex items-center gap-3 mb-8">
                         <Activity size={18} style={{ color: 'var(--primary)' }} />
                         <h2 className="text-xl font-bold" style={{ color: 'var(--foreground)' }}>
-                            Detailed Results
+                            {t("report.detailedResults")}
                         </h2>
                         <div className="flex-1 h-px" style={{ background: 'var(--border)' }} />
                     </div>
@@ -224,4 +224,3 @@ export default function ReportPage() {
         </div>
     );
 }
-

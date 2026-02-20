@@ -2,6 +2,7 @@
 
 import { TrendingDown, TrendingUp, CheckCircle, AlertTriangle, Info } from "lucide-react";
 import type { TestStatus } from "@/lib/explanationEngine";
+import { useTranslation } from "@/i18n/I18nProvider";
 
 interface TestResultCardProps {
     testName: string;
@@ -13,46 +14,6 @@ interface TestResultCardProps {
     index?: number;
 }
 
-const STATUS_CONFIG: Record<
-    TestStatus,
-    {
-        label: string;
-        color: string;
-        bgColor: string;
-        icon: typeof CheckCircle;
-        gradient: string;
-    }
-> = {
-    normal: {
-        label: "Normal",
-        color: "var(--status-normal)",
-        bgColor: "var(--status-normal-bg)",
-        icon: CheckCircle,
-        gradient: "linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,197,94,0.02))",
-    },
-    low: {
-        label: "Low",
-        color: "var(--status-abnormal)",
-        bgColor: "var(--status-abnormal-bg)",
-        icon: TrendingDown,
-        gradient: "linear-gradient(135deg, rgba(239,68,68,0.08), rgba(239,68,68,0.02))",
-    },
-    high: {
-        label: "High",
-        color: "var(--status-abnormal)",
-        bgColor: "var(--status-abnormal-bg)",
-        icon: TrendingUp,
-        gradient: "linear-gradient(135deg, rgba(239,68,68,0.08), rgba(239,68,68,0.02))",
-    },
-    borderline: {
-        label: "Borderline",
-        color: "var(--status-borderline)",
-        bgColor: "var(--status-borderline-bg)",
-        icon: AlertTriangle,
-        gradient: "linear-gradient(135deg, rgba(245,158,11,0.08), rgba(245,158,11,0.02))",
-    },
-};
-
 export default function TestResultCard({
     testName,
     patientValue,
@@ -62,6 +23,48 @@ export default function TestResultCard({
     explanation,
     index = 0,
 }: TestResultCardProps) {
+    const { t } = useTranslation();
+
+    const STATUS_CONFIG: Record<
+        TestStatus,
+        {
+            label: string;
+            color: string;
+            bgColor: string;
+            icon: typeof CheckCircle;
+            gradient: string;
+        }
+    > = {
+        normal: {
+            label: t("testCard.normal"),
+            color: "var(--status-normal)",
+            bgColor: "var(--status-normal-bg)",
+            icon: CheckCircle,
+            gradient: "linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,197,94,0.02))",
+        },
+        low: {
+            label: t("testCard.low"),
+            color: "var(--status-abnormal)",
+            bgColor: "var(--status-abnormal-bg)",
+            icon: TrendingDown,
+            gradient: "linear-gradient(135deg, rgba(239,68,68,0.08), rgba(239,68,68,0.02))",
+        },
+        high: {
+            label: t("testCard.high"),
+            color: "var(--status-abnormal)",
+            bgColor: "var(--status-abnormal-bg)",
+            icon: TrendingUp,
+            gradient: "linear-gradient(135deg, rgba(239,68,68,0.08), rgba(239,68,68,0.02))",
+        },
+        borderline: {
+            label: t("testCard.borderline"),
+            color: "var(--status-borderline)",
+            bgColor: "var(--status-borderline-bg)",
+            icon: AlertTriangle,
+            gradient: "linear-gradient(135deg, rgba(245,158,11,0.08), rgba(245,158,11,0.02))",
+        },
+    };
+
     const config = STATUS_CONFIG[status];
     const StatusIcon = config.icon;
 
@@ -101,7 +104,7 @@ export default function TestResultCard({
                     <div className="flex items-end gap-6 mb-6">
                         <div>
                             <p className="text-xs font-medium uppercase tracking-wider mb-1.5" style={{ color: 'var(--text-muted)' }}>
-                                Your Result
+                                {t("testCard.yourResult")}
                             </p>
                             <div className="flex items-baseline gap-2">
                                 <span className="text-5xl font-extrabold tabular-nums" style={{ color: config.color }}>
@@ -114,7 +117,7 @@ export default function TestResultCard({
                         </div>
                         <div className="pb-1.5">
                             <p className="text-xs font-medium uppercase tracking-wider mb-1.5" style={{ color: 'var(--text-muted)' }}>
-                                Normal Range
+                                {t("testCard.normalRange")}
                             </p>
                             <span className="text-2xl font-bold tabular-nums" style={{ color: 'var(--text-secondary)' }}>
                                 {normalRange.low}–{normalRange.high}
@@ -148,7 +151,7 @@ export default function TestResultCard({
                     <div className="flex items-center gap-2 mb-3">
                         <Info size={15} style={{ color: config.color }} />
                         <p className="text-xs font-bold uppercase tracking-wider" style={{ color: config.color }}>
-                            What this means
+                            {t("testCard.whatThisMeans")}
                         </p>
                     </div>
                     <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
@@ -171,6 +174,7 @@ function RangeBar({
     high: number;
     statusColor: string;
 }) {
+    const { t } = useTranslation();
     const padding = (high - low) * 0.5;
     const barMin = Math.max(0, low - padding);
     const barMax = high + padding;
@@ -190,7 +194,7 @@ function RangeBar({
                     color: 'var(--status-normal)',
                     background: 'var(--status-normal-bg)',
                 }}>
-                    Normal: {low}–{high}
+                    {t("rangeBar.normal")} {low}–{high}
                 </span>
                 <span className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>
                     {barMax.toFixed(0)}

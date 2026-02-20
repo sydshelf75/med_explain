@@ -1,0 +1,88 @@
+{
+    "header": {
+        "home": "Home",
+        "uploadReport": "Upload Report"
+    },
+    "hero": {
+        "badge": "Clarity, not confusion",
+        "titleLine1": "Understand your",
+        "titleHighlight": "medical reports",
+        "titleLine2": "clearly & calmly",
+        "subtitle": "MedExplain converts complex lab report jargon into simple, easy-to-read explanations — translated into your native language.",
+        "cta": "Upload your report"
+    },
+    "howItWorks": {
+        "title": "How it works",
+        "subtitle": "Three simple steps to understand your report",
+        "step1Title": "Upload Your Report",
+        "step1Desc": "Drop your lab report (PDF, JPG, or PNG). We extract the data securely — nothing is stored.",
+        "step2Title": "We Analyze & Explain",
+        "step2Desc": "Our engine identifies test values, checks them against normal ranges, and writes a clear explanation.",
+        "step3Title": "Read in Your Language",
+        "step3Desc": "Get your results translated into your preferred language — powered by lingo.dev."
+    },
+    "languages": {
+        "title": "Supported Languages",
+        "subtitle": "We speak your language — so your health report can too"
+    },
+    "trust": {
+        "privacyTitle": "Privacy First",
+        "privacyDesc": "Your reports are processed in memory and never stored. We delete everything after analysis.",
+        "noDiagTitle": "No Diagnoses",
+        "noDiagDesc": "We explain, never diagnose. MedExplain always encourages consulting your doctor.",
+        "aiTitle": "AI-Powered",
+        "aiDesc": "Smart parsing + localization powered by lingo.dev for context-aware translations."
+    },
+    "upload": {
+        "title": "Upload your report",
+        "subtitle": "Drop your lab report and we'll explain it in simple terms",
+        "dragActive": "Drop your file here",
+        "dragDefault": "Drag & drop your report here",
+        "browseHint": "or click to browse • PDF, JPG, PNG (max 10 MB)",
+        "fileError": "Please upload a PDF, JPG, or PNG file (max 10 MB).",
+        "langLabel": "Explanation language",
+        "langHint": "We'll translate explanations into this language",
+        "privacyTitle": "Your privacy is protected",
+        "privacyDesc": "Reports are processed in memory and immediately deleted. We never store your medical data.",
+        "analyzing": "Analyzing your report...",
+        "submitBtn": "Explain My Report",
+        "genericError": "Something went wrong. Please try again.",
+        "analysisError": "Analysis failed. Please try again."
+    },
+    "report": {
+        "loading": "Loading your results...",
+        "noTestsTitle": "Unable to extract test data",
+        "noTestsDesc": "We couldn't identify common medical tests in your report. This could happen with handwritten reports, unclear scans, or specialized tests we don't yet support.",
+        "tryAnother": "Try another report",
+        "backToUpload": "Upload another report",
+        "pageTitle": "Your Report,",
+        "pageTitleHighlight": "Explained",
+        "resultsFound": "We analyzed your medical report and found",
+        "testResults": "test results.",
+        "resultsExplain": "Here's what they mean in plain language.",
+        "detailedResults": "Detailed Results"
+    },
+    "testCard": {
+        "normal": "Normal",
+        "low": "Low",
+        "high": "High",
+        "borderline": "Borderline",
+        "yourResult": "Your Result",
+        "normalRange": "Normal Range",
+        "whatThisMeans": "What this means"
+    },
+    "disclaimer": {
+        "bannerTitle": "Important Disclaimer",
+        "bannerText": "MedExplain provides simplified explanations for educational purposes only. It does not diagnose conditions or recommend treatments. Always consult a qualified healthcare professional for medical advice.",
+        "inline": "For educational purposes only — not a substitute for medical advice."
+    },
+    "footer": {
+        "disclaimerLabel": "Disclaimer:",
+        "disclaimerText": "MedExplain is an educational tool only. It does not provide medical diagnoses, treatment advice, or professional medical opinions. Always consult a qualified healthcare provider for medical concerns. The explanations provided are simplified and may not capture the full clinical context.",
+        "copyright": "MedExplain — Understand your reports clearly.",
+        "poweredBy": "Translations powered by"
+    },
+    "rangeBar": {
+        "normal": "Normal:"
+    }
+}

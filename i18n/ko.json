@@ -1,0 +1,88 @@
+{
+  "header": {
+    "home": "홈",
+    "uploadReport": "검사 결과 업로드"
+  },
+  "hero": {
+    "badge": "혼란이 아닌, 명확함",
+    "titleLine1": "의료 검사 결과를",
+    "titleHighlight": "명확하고 차분하게",
+    "titleLine2": "이해하세요",
+    "subtitle": "MedExplain은 복잡한 검사 결과 용어를 간단하고 읽기 쉬운 설명으로 변환하며, 모국어로 번역해 드립니다.",
+    "cta": "검사 결과 업로드하기"
+  },
+  "howItWorks": {
+    "title": "작동 방식",
+    "subtitle": "검사 결과를 이해하는 세 가지 간단한 단계",
+    "step1Title": "검사 결과 업로드",
+    "step1Desc": "검사 결과(PDF, JPG 또는 PNG)를 업로드하세요. 데이터를 안전하게 추출하며 저장하지 않습니다.",
+    "step2Title": "분석 및 설명",
+    "step2Desc": "엔진이 검사 수치를 식별하고 정상 범위와 비교한 후 명확한 설명을 작성합니다.",
+    "step3Title": "원하는 언어로 확인",
+    "step3Desc": "lingo.dev 기반으로 선호하는 언어로 번역된 결과를 받아보세요."
+  },
+  "languages": {
+    "title": "지원 언어",
+    "subtitle": "귀하의 언어로 소통합니다 — 건강 검사 결과도 마찬가지입니다"
+  },
+  "trust": {
+    "privacyTitle": "개인정보 보호 우선",
+    "privacyDesc": "검사 결과는 메모리에서 처리되며 저장되지 않습니다. 분석 후 모든 데이터를 삭제합니다.",
+    "noDiagTitle": "진단 없음",
+    "noDiagDesc": "설명만 제공하며 진단하지 않습니다. MedExplain은 항상 의사와 상담할 것을 권장합니다.",
+    "aiTitle": "AI 기반",
+    "aiDesc": "lingo.dev 기반의 스마트 파싱 및 현지화로 문맥을 고려한 번역을 제공합니다."
+  },
+  "upload": {
+    "title": "검사 결과 업로드",
+    "subtitle": "검사 결과지를 업로드하시면 쉬운 용어로 설명해 드립니다",
+    "dragActive": "여기에 파일을 놓으세요",
+    "dragDefault": "결과지를 여기에 드래그 앤 드롭하세요",
+    "browseHint": "또는 클릭하여 찾아보기 • PDF, JPG, PNG (최대 10 MB)",
+    "fileError": "PDF, JPG 또는 PNG 파일을 업로드해 주세요 (최대 10 MB).",
+    "langLabel": "설명 언어",
+    "langHint": "설명을 이 언어로 번역합니다",
+    "privacyTitle": "개인정보가 보호됩니다",
+    "privacyDesc": "결과지는 메모리에서 처리되며 즉시 삭제됩니다. 의료 데이터를 저장하지 않습니다.",
+    "analyzing": "결과지를 분석하는 중...",
+    "submitBtn": "내 결과지 설명하기",
+    "genericError": "문제가 발생했습니다. 다시 시도해 주세요.",
+    "analysisError": "분석에 실패했습니다. 다시 시도해 주세요."
+  },
+  "report": {
+    "loading": "결과를 불러오는 중...",
+    "noTestsTitle": "검사 데이터를 추출할 수 없습니다",
+    "noTestsDesc": "결과지에서 일반적인 의료 검사를 식별할 수 없습니다. 수기로 작성된 결과지, 불분명한 스캔 또는 아직 지원하지 않는 특수 검사일 수 있습니다.",
+    "tryAnother": "다른 결과지 시도하기",
+    "backToUpload": "다른 결과지 업로드하기",
+    "pageTitle": "당신의 결과지,",
+    "pageTitleHighlight": "쉽게 설명",
+    "resultsFound": "의료 결과지를 분석하여",
+    "testResults": "개의 검사 결과를 찾았습니다.",
+    "resultsExplain": "쉬운 용어로 설명하면 다음과 같습니다.",
+    "detailedResults": "상세 결과"
+  },
+  "testCard": {
+    "normal": "정상",
+    "low": "낮음",
+    "high": "높음",
+    "borderline": "경계선",
+    "yourResult": "귀하의 결과",
+    "normalRange": "정상 범위",
+    "whatThisMeans": "이것이 의미하는 것"
+  },
+  "disclaimer": {
+    "bannerTitle": "중요한 면책 조항",
+    "bannerText": "MedExplain은 교육 목적으로만 간소화된 설명을 제공합니다. 질병을 진단하거나 치료를 권장하지 않습니다. 의학적 조언은 항상 자격을 갖춘 의료 전문가와 상담하십시오.",
+    "inline": "교육 목적으로만 제공됨 — 의학적 조언을 대체하지 않습니다."
+  },
+  "footer": {
+    "disclaimerLabel": "면책 조항:",
+    "disclaimerText": "MedExplain은 교육 도구일 뿐입니다. 의학적 진단, 치료 조언 또는 전문적인 의학적 의견을 제공하지 않습니다. 의학적 문제는 항상 자격을 갖춘 의료 제공자와 상담하십시오. 제공되는 설명은 간소화되어 있으며 전체 임상 맥락을 포착하지 못할 수 있습니다.",
+    "copyright": "MedExplain — 귀하의 보고서를 명확하게 이해하십시오.",
+    "poweredBy": "번역 제공:"
+  },
+  "rangeBar": {
+    "normal": "정상:"
+  }
+}

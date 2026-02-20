@@ -2,6 +2,7 @@
 
 import { Globe } from "lucide-react";
 import { SUPPORTED_LANGUAGES, type LanguageCode } from "@/lib/medicalDictionary";
+import { useTranslation } from "@/i18n/I18nProvider";
 
 interface LanguageSelectorProps {
     value: LanguageCode;
@@ -14,6 +15,14 @@ export default function LanguageSelector({
     onChange,
     size = "md",
 }: LanguageSelectorProps) {
+    const { setLocale } = useTranslation();
+
+    const handleChange = (newLang: LanguageCode) => {
+        // Update both the UI locale and the parent's language state
+        setLocale(newLang);
+        onChange(newLang);
+    };
+
     return (
         <div className="relative inline-flex items-center">
             <Globe
@@ -23,7 +32,7 @@ export default function LanguageSelector({
             />
             <select
                 value={value}
-                onChange={(e) => onChange(e.target.value as LanguageCode)}
+                onChange={(e) => handleChange(e.target.value as LanguageCode)}
                 className={`
           appearance-none cursor-pointer rounded-full font-medium
           transition-all duration-200 outline-none

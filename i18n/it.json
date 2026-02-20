@@ -1,0 +1,88 @@
+{
+  "header": {
+    "home": "Home",
+    "uploadReport": "Carica referto"
+  },
+  "hero": {
+    "badge": "Chiarezza, non confusione",
+    "titleLine1": "Comprendi i tuoi",
+    "titleHighlight": "referti medici",
+    "titleLine2": "in modo chiaro e sereno",
+    "subtitle": "MedExplain converte il gergo complesso dei referti di laboratorio in spiegazioni semplici e facili da leggere — tradotte nella tua lingua madre.",
+    "cta": "Carica il tuo referto"
+  },
+  "howItWorks": {
+    "title": "Come funziona",
+    "subtitle": "Tre semplici passaggi per comprendere il tuo referto",
+    "step1Title": "Carica il tuo referto",
+    "step1Desc": "Carica il tuo referto di laboratorio (PDF, JPG o PNG). Estraiamo i dati in modo sicuro — nulla viene memorizzato.",
+    "step2Title": "Analizziamo e spieghiamo",
+    "step2Desc": "Il nostro sistema identifica i valori degli esami, li confronta con i range di normalità e fornisce una spiegazione chiara.",
+    "step3Title": "Leggi nella tua lingua",
+    "step3Desc": "Ricevi i tuoi risultati tradotti nella lingua che preferisci — grazie alla tecnologia di lingo.dev."
+  },
+  "languages": {
+    "title": "Lingue supportate",
+    "subtitle": "Parliamo la tua lingua — così anche il tuo referto può farlo"
+  },
+  "trust": {
+    "privacyTitle": "Privacy al primo posto",
+    "privacyDesc": "I tuoi referti vengono elaborati in memoria e mai archiviati. Eliminiamo tutto dopo l'analisi.",
+    "noDiagTitle": "Nessuna diagnosi",
+    "noDiagDesc": "Spieghiamo, non diagnostichiamo. MedExplain incoraggia sempre a consultare il proprio medico.",
+    "aiTitle": "Basato su intelligenza artificiale",
+    "aiDesc": "Analisi intelligente + localizzazione powered by lingo.dev per traduzioni contestuali."
+  },
+  "upload": {
+    "title": "Carica il tuo referto",
+    "subtitle": "Carica il tuo referto e te lo spiegheremo in termini semplici",
+    "dragActive": "Rilascia il file qui",
+    "dragDefault": "Trascina e rilascia il tuo referto qui",
+    "browseHint": "oppure clicca per sfogliare • PDF, JPG, PNG (max 10 MB)",
+    "fileError": "Carica un file PDF, JPG o PNG (max 10 MB).",
+    "langLabel": "Lingua della spiegazione",
+    "langHint": "Tradurremo le spiegazioni in questa lingua",
+    "privacyTitle": "La tua privacy è protetta",
+    "privacyDesc": "I referti vengono elaborati in memoria e immediatamente eliminati. Non conserviamo mai i tuoi dati medici.",
+    "analyzing": "Analisi del referto in corso...",
+    "submitBtn": "Spiega il mio referto",
+    "genericError": "Qualcosa è andato storto. Riprova.",
+    "analysisError": "Analisi non riuscita. Riprova."
+  },
+  "report": {
+    "loading": "Caricamento dei risultati...",
+    "noTestsTitle": "Impossibile estrarre i dati degli esami",
+    "noTestsDesc": "Non siamo riusciti a identificare esami medici comuni nel tuo referto. Questo può accadere con referti scritti a mano, scansioni poco chiare o esami specialistici che non supportiamo ancora.",
+    "tryAnother": "Prova un altro referto",
+    "backToUpload": "Carica un altro referto",
+    "pageTitle": "Il tuo referto,",
+    "pageTitleHighlight": "spiegato",
+    "resultsFound": "Abbiamo analizzato il tuo referto medico e trovato",
+    "testResults": "risultati degli esami.",
+    "resultsExplain": "Ecco cosa significano in parole semplici.",
+    "detailedResults": "Risultati dettagliati"
+  },
+  "testCard": {
+    "normal": "Normale",
+    "low": "Basso",
+    "high": "Alto",
+    "borderline": "Borderline",
+    "yourResult": "Il tuo risultato",
+    "normalRange": "Range normale",
+    "whatThisMeans": "Cosa significa"
+  },
+  "disclaimer": {
+    "bannerTitle": "Avviso importante",
+    "bannerText": "MedExplain fornisce spiegazioni semplificate solo a scopo educativo. Non diagnostica condizioni né raccomanda trattamenti. Consulta sempre un professionista sanitario qualificato per consigli medici.",
+    "inline": "Solo a scopo educativo — non sostituisce il parere medico."
+  },
+  "footer": {
+    "disclaimerLabel": "Avviso:",
+    "disclaimerText": "MedExplain è uno strumento educativo. Non fornisce diagnosi mediche, consigli terapeutici o pareri medici professionali. Consulta sempre un operatore sanitario qualificato per questioni mediche. Le spiegazioni fornite sono semplificate e potrebbero non cogliere l'intero contesto clinico.",
+    "copyright": "MedExplain — Comprendi chiaramente i tuoi referti.",
+    "poweredBy": "Traduzioni fornite da"
+  },
+  "rangeBar": {
+    "normal": "Normale:"
+  }
+}

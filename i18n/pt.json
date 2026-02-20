@@ -1,0 +1,88 @@
+{
+  "header": {
+    "home": "Início",
+    "uploadReport": "Enviar relatório"
+  },
+  "hero": {
+    "badge": "Clareza, não confusão",
+    "titleLine1": "Compreenda os seus",
+    "titleHighlight": "relatórios médicos",
+    "titleLine2": "de forma clara e tranquila",
+    "subtitle": "O MedExplain converte o jargão complexo de relatórios laboratoriais em explicações simples e fáceis de ler — traduzidas para a sua língua nativa.",
+    "cta": "Enviar o seu relatório"
+  },
+  "howItWorks": {
+    "title": "Como funciona",
+    "subtitle": "Três passos simples para compreender o seu relatório",
+    "step1Title": "Envie o seu relatório",
+    "step1Desc": "Carregue o seu relatório laboratorial (PDF, JPG ou PNG). Extraímos os dados de forma segura — nada é armazenado.",
+    "step2Title": "Analisamos e explicamos",
+    "step2Desc": "O nosso motor identifica os valores dos testes, verifica-os em relação aos intervalos normais e elabora uma explicação clara.",
+    "step3Title": "Leia na sua língua",
+    "step3Desc": "Receba os seus resultados traduzidos para a sua língua preferida — com tecnologia lingo.dev."
+  },
+  "languages": {
+    "title": "Idiomas suportados",
+    "subtitle": "Falamos a sua língua — para que o seu relatório de saúde também possa falar"
+  },
+  "trust": {
+    "privacyTitle": "Privacidade em primeiro lugar",
+    "privacyDesc": "Os seus relatórios são processados em memória e nunca armazenados. Eliminamos tudo após a análise.",
+    "noDiagTitle": "Sem diagnósticos",
+    "noDiagDesc": "Explicamos, nunca diagnosticamos. O MedExplain incentiva sempre a consultar o seu médico.",
+    "aiTitle": "Tecnologia de IA",
+    "aiDesc": "Análise inteligente + localização com tecnologia lingo.dev para traduções contextualizadas."
+  },
+  "upload": {
+    "title": "Envie o seu relatório",
+    "subtitle": "Envie o seu relatório de exames e vamos explicá-lo em termos simples",
+    "dragActive": "Solte o seu ficheiro aqui",
+    "dragDefault": "Arraste e solte o seu relatório aqui",
+    "browseHint": "ou clique para procurar • PDF, JPG, PNG (máx. 10 MB)",
+    "fileError": "Por favor, envie um ficheiro PDF, JPG ou PNG (máx. 10 MB).",
+    "langLabel": "Idioma da explicação",
+    "langHint": "Vamos traduzir as explicações para este idioma",
+    "privacyTitle": "A sua privacidade está protegida",
+    "privacyDesc": "Os relatórios são processados em memória e imediatamente eliminados. Nunca armazenamos os seus dados médicos.",
+    "analyzing": "A analisar o seu relatório...",
+    "submitBtn": "Explicar o meu relatório",
+    "genericError": "Algo correu mal. Por favor, tente novamente.",
+    "analysisError": "A análise falhou. Por favor, tente novamente."
+  },
+  "report": {
+    "loading": "A carregar os seus resultados...",
+    "noTestsTitle": "Não foi possível extrair dados dos exames",
+    "noTestsDesc": "Não conseguimos identificar exames médicos comuns no seu relatório. Isto pode acontecer com relatórios manuscritos, digitalizações pouco claras ou exames especializados que ainda não suportamos.",
+    "tryAnother": "Tentar outro relatório",
+    "backToUpload": "Enviar outro relatório",
+    "pageTitle": "O seu relatório,",
+    "pageTitleHighlight": "explicado",
+    "resultsFound": "Analisámos o seu relatório médico e encontrámos",
+    "testResults": "resultados de exames.",
+    "resultsExplain": "Aqui está o que significam em linguagem simples.",
+    "detailedResults": "Resultados detalhados"
+  },
+  "testCard": {
+    "normal": "Normal",
+    "low": "Baixo",
+    "high": "Alto",
+    "borderline": "Limítrofe",
+    "yourResult": "O seu resultado",
+    "normalRange": "Intervalo normal",
+    "whatThisMeans": "O que isto significa"
+  },
+  "disclaimer": {
+    "bannerTitle": "Aviso importante",
+    "bannerText": "O MedExplain fornece explicações simplificadas apenas para fins educativos. Não diagnostica condições nem recomenda tratamentos. Consulte sempre um profissional de saúde qualificado para aconselhamento médico.",
+    "inline": "Apenas para fins educativos — não substitui aconselhamento médico."
+  },
+  "footer": {
+    "disclaimerLabel": "Aviso:",
+    "disclaimerText": "O MedExplain é apenas uma ferramenta educativa. Não fornece diagnósticos médicos, aconselhamento sobre tratamentos ou pareceres médicos profissionais. Consulte sempre um profissional de saúde qualificado para questões médicas. As explicações fornecidas são simplificadas e podem não capturar o contexto clínico completo.",
+    "copyright": "MedExplain — Compreenda os seus relatórios claramente.",
+    "poweredBy": "Traduções fornecidas por"
+  },
+  "rangeBar": {
+    "normal": "Normal:"
+  }
+}

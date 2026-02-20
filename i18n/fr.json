@@ -1,0 +1,88 @@
+{
+  "header": {
+    "home": "Accueil",
+    "uploadReport": "Télécharger un rapport"
+  },
+  "hero": {
+    "badge": "Clarté, pas confusion",
+    "titleLine1": "Comprenez vos",
+    "titleHighlight": "rapports médicaux",
+    "titleLine2": "clairement et sereinement",
+    "subtitle": "MedExplain convertit le jargon complexe des rapports de laboratoire en explications simples et faciles à lire — traduites dans votre langue maternelle.",
+    "cta": "Télécharger votre rapport"
+  },
+  "howItWorks": {
+    "title": "Comment ça marche",
+    "subtitle": "Trois étapes simples pour comprendre votre rapport",
+    "step1Title": "Téléchargez votre rapport",
+    "step1Desc": "Déposez votre rapport de laboratoire (PDF, JPG ou PNG). Nous extrayons les données de manière sécurisée — rien n'est conservé.",
+    "step2Title": "Nous analysons et expliquons",
+    "step2Desc": "Notre moteur identifie les valeurs des tests, les compare aux plages normales et rédige une explication claire.",
+    "step3Title": "Lisez dans votre langue",
+    "step3Desc": "Recevez vos résultats traduits dans votre langue préférée — propulsé par lingo.dev."
+  },
+  "languages": {
+    "title": "Langues prises en charge",
+    "subtitle": "Nous parlons votre langue — pour que votre rapport de santé le puisse aussi"
+  },
+  "trust": {
+    "privacyTitle": "Confidentialité d'abord",
+    "privacyDesc": "Vos rapports sont traités en mémoire et jamais stockés. Nous supprimons tout après l'analyse.",
+    "noDiagTitle": "Aucun diagnostic",
+    "noDiagDesc": "Nous expliquons, jamais nous ne diagnostiquons. MedExplain encourage toujours à consulter votre médecin.",
+    "aiTitle": "Propulsé par l'IA",
+    "aiDesc": "Analyse intelligente + localisation propulsée par lingo.dev pour des traductions contextuelles."
+  },
+  "upload": {
+    "title": "Téléchargez votre rapport",
+    "subtitle": "Déposez votre analyse de laboratoire et nous vous l'expliquerons en termes simples",
+    "dragActive": "Déposez votre fichier ici",
+    "dragDefault": "Glissez-déposez votre analyse ici",
+    "browseHint": "ou cliquez pour parcourir • PDF, JPG, PNG (max 10 Mo)",
+    "fileError": "Veuillez télécharger un fichier PDF, JPG ou PNG (max 10 Mo).",
+    "langLabel": "Langue d'explication",
+    "langHint": "Nous traduirons les explications dans cette langue",
+    "privacyTitle": "Votre vie privée est protégée",
+    "privacyDesc": "Les analyses sont traitées en mémoire et immédiatement supprimées. Nous ne stockons jamais vos données médicales.",
+    "analyzing": "Analyse de votre rapport en cours...",
+    "submitBtn": "Expliquer mon analyse",
+    "genericError": "Une erreur s'est produite. Veuillez réessayer.",
+    "analysisError": "L'analyse a échoué. Veuillez réessayer."
+  },
+  "report": {
+    "loading": "Chargement de vos résultats...",
+    "noTestsTitle": "Impossible d'extraire les données de test",
+    "noTestsDesc": "Nous n'avons pas pu identifier de tests médicaux courants dans votre rapport. Cela peut se produire avec des rapports manuscrits, des scans peu clairs ou des tests spécialisés que nous ne prenons pas encore en charge.",
+    "tryAnother": "Essayer un autre rapport",
+    "backToUpload": "Télécharger un autre rapport",
+    "pageTitle": "Votre analyse,",
+    "pageTitleHighlight": "expliquée",
+    "resultsFound": "Nous avons analysé votre rapport médical et trouvé",
+    "testResults": "résultats de tests.",
+    "resultsExplain": "Voici ce qu'ils signifient en langage simple.",
+    "detailedResults": "Résultats détaillés"
+  },
+  "testCard": {
+    "normal": "Normal",
+    "low": "Faible",
+    "high": "Élevé",
+    "borderline": "Limite",
+    "yourResult": "Votre résultat",
+    "normalRange": "Plage normale",
+    "whatThisMeans": "Ce que cela signifie"
+  },
+  "disclaimer": {
+    "bannerTitle": "Avertissement important",
+    "bannerText": "MedExplain fournit des explications simplifiées à des fins éducatives uniquement. Il ne diagnostique pas de pathologies et ne recommande pas de traitements. Consultez toujours un professionnel de santé qualifié pour obtenir des conseils médicaux.",
+    "inline": "À des fins éducatives uniquement — ne remplace pas un avis médical."
+  },
+  "footer": {
+    "disclaimerLabel": "Avertissement :",
+    "disclaimerText": "MedExplain est un outil éducatif uniquement. Il ne fournit pas de diagnostics médicaux, de conseils de traitement ou d'avis médicaux professionnels. Consultez toujours un professionnel de santé qualifié pour toute préoccupation médicale. Les explications fournies sont simplifiées et peuvent ne pas refléter l'intégralité du contexte clinique.",
+    "copyright": "MedExplain — Comprenez clairement vos rapports.",
+    "poweredBy": "Traductions fournies par"
+  },
+  "rangeBar": {
+    "normal": "Normal :"
+  }
+}

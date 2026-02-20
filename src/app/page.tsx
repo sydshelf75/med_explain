@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   Upload,
@@ -11,8 +13,11 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Disclaimer from "@/components/Disclaimer";
+import { useTranslation } from "@/i18n/I18nProvider";
 
 export default function Home() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen flex flex-col" style={{ background: 'var(--background)' }}>
       <Header />
@@ -39,7 +44,7 @@ export default function Home() {
                 style={{ background: 'var(--primary-glow)', color: 'var(--primary)' }}
               >
                 <Heart size={12} />
-                Clarity, not confusion
+                {t("hero.badge")}
               </span>
             </div>
 
@@ -47,27 +52,26 @@ export default function Home() {
               className="animate-fade-in-up animate-delay-1 text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-6"
               style={{ color: 'var(--foreground)' }}
             >
-              Understand your{" "}
+              {t("hero.titleLine1")}{" "}
               <span
                 className="relative inline-block"
                 style={{ color: 'var(--primary)' }}
               >
-                medical reports
+                {t("hero.titleHighlight")}
                 <span
                   className="absolute bottom-1 left-0 right-0 h-3 -z-10 rounded-sm opacity-20"
                   style={{ background: 'var(--primary)' }}
                 />
               </span>
               <br />
-              clearly & calmly
+              {t("hero.titleLine2")}
             </h1>
 
             <p
               className="animate-fade-in-up animate-delay-2 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
               style={{ color: 'var(--text-secondary)' }}
             >
-              MedExplain converts complex lab report jargon into simple,
-              easy-to-read explanations — translated into your native language.
+              {t("hero.subtitle")}
             </p>
 
             <div className="animate-fade-in-up animate-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -79,7 +83,7 @@ export default function Home() {
                   boxShadow: '0 4px 20px rgba(13, 148, 136, 0.3)',
                 }}
               >
-                Upload your report
+                {t("hero.cta")}
                 <ArrowRight size={18} />
               </Link>
               <Disclaimer />
@@ -95,10 +99,10 @@ export default function Home() {
                 className="text-3xl sm:text-4xl font-bold mb-4"
                 style={{ color: 'var(--foreground)' }}
               >
-                How it works
+                {t("howItWorks.title")}
               </h2>
               <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>
-                Three simple steps to understand your report
+                {t("howItWorks.subtitle")}
               </p>
             </div>
 
@@ -106,20 +110,20 @@ export default function Home() {
               <StepCard
                 step={1}
                 icon={<Upload size={28} />}
-                title="Upload Your Report"
-                description="Drop your lab report (PDF, JPG, or PNG). We extract the data securely — nothing is stored."
+                title={t("howItWorks.step1Title")}
+                description={t("howItWorks.step1Desc")}
               />
               <StepCard
                 step={2}
                 icon={<FileSearch size={28} />}
-                title="We Analyze & Explain"
-                description="Our engine identifies test values, checks them against normal ranges, and writes a clear explanation."
+                title={t("howItWorks.step2Title")}
+                description={t("howItWorks.step2Desc")}
               />
               <StepCard
                 step={3}
                 icon={<Languages size={28} />}
-                title="Read in Your Language"
-                description="Get your results translated into Hindi, Tamil, Telugu, or English — powered by lingo.dev."
+                title={t("howItWorks.step3Title")}
+                description={t("howItWorks.step3Desc")}
               />
             </div>
           </div>
@@ -133,10 +137,10 @@ export default function Home() {
                 className="text-3xl sm:text-4xl font-bold mb-4"
                 style={{ color: 'var(--foreground)' }}
               >
-                Supported Languages
+                {t("languages.title")}
               </h2>
               <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>
-                We speak your language — so your health report can too
+                {t("languages.subtitle")}
               </p>
             </div>
 
@@ -155,18 +159,18 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <TrustCard
                 icon={<Shield size={24} />}
-                title="Privacy First"
-                description="Your reports are processed in memory and never stored. We delete everything after analysis."
+                title={t("trust.privacyTitle")}
+                description={t("trust.privacyDesc")}
               />
               <TrustCard
                 icon={<Heart size={24} />}
-                title="No Diagnoses"
-                description="We explain, never diagnose. MedExplain always encourages consulting your doctor."
+                title={t("trust.noDiagTitle")}
+                description={t("trust.noDiagDesc")}
               />
               <TrustCard
                 icon={<Sparkles size={24} />}
-                title="AI-Powered"
-                description="Smart parsing + localization powered by lingo.dev for context-aware translations."
+                title={t("trust.aiTitle")}
+                description={t("trust.aiDesc")}
               />
             </div>
 

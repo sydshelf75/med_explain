@@ -1,0 +1,88 @@
+{
+  "header": {
+    "home": "首页",
+    "uploadReport": "上传报告"
+  },
+  "hero": {
+    "badge": "清晰，而非困惑",
+    "titleLine1": "让你了解",
+    "titleHighlight": "医学报告",
+    "titleLine2": "清楚且安心",
+    "subtitle": "MedExplain 将复杂的化验报告术语转化为简单易懂的解释——并翻译成你的母语。",
+    "cta": "上传你的报告"
+  },
+  "howItWorks": {
+    "title": "使用方法",
+    "subtitle": "三步轻松读懂你的报告",
+    "step1Title": "上传你的报告",
+    "step1Desc": "上传你的化验报告（PDF、JPG 或 PNG）。我们会安全提取数据——绝不存储任何内容。",
+    "step2Title": "分析与解读",
+    "step2Desc": "我们的引擎识别检测数值，对比正常范围，并生成清晰解释。",
+    "step3Title": "多语言阅读",
+    "step3Desc": "你的结果将被翻译成你偏好的语言——由 lingo.dev 提供支持。"
+  },
+  "languages": {
+    "title": "支持的语言",
+    "subtitle": "我们说你的语言——你的健康报告也可以"
+  },
+  "trust": {
+    "privacyTitle": "隐私优先",
+    "privacyDesc": "你的报告仅在内存中处理，绝不存储。分析后立即删除所有内容。",
+    "noDiagTitle": "不做诊断",
+    "noDiagDesc": "我们只做解释，不做诊断。MedExplain 始终建议你咨询医生。",
+    "aiTitle": "AI 驱动",
+    "aiDesc": "由 lingo.dev 提供的智能解析与本地化，带来语境感知的翻译。"
+  },
+  "upload": {
+    "title": "上传你的报告",
+    "subtitle": "请上传您的实验报告，我们将用简单易懂的语言为您解读",
+    "dragActive": "请将文件拖放到此处",
+    "dragDefault": "将您的报告拖放到这里",
+    "browseHint": "或点击浏览 • PDF、JPG、PNG（最大 10 MB）",
+    "fileError": "请上传 PDF、JPG 或 PNG 文件（最大 10 MB）。",
+    "langLabel": "解读语言",
+    "langHint": "我们会将解读内容翻译为此语言",
+    "privacyTitle": "您的隐私受到保护",
+    "privacyDesc": "报告仅在内存中处理，处理后立即删除。我们绝不会存储您的医疗数据。",
+    "analyzing": "正在分析您的报告...",
+    "submitBtn": "解读我的报告",
+    "genericError": "出现问题，请重试。",
+    "analysisError": "分析失败，请重试。"
+  },
+  "report": {
+    "loading": "正在加载您的结果...",
+    "noTestsTitle": "无法提取检测数据",
+    "noTestsDesc": "我们未能在您的报告中识别出常见的医学检测。这可能是由于手写报告、扫描件不清晰，或是我们尚未支持的专业检测。",
+    "tryAnother": "尝试其他报告",
+    "backToUpload": "上传其他报告",
+    "pageTitle": "您的报告，",
+    "pageTitleHighlight": "解读结果",
+    "resultsFound": "我们已分析您的医学报告，发现了",
+    "testResults": "项检测结果。",
+    "resultsExplain": "以下是这些结果的通俗解释。",
+    "detailedResults": "详细结果"
+  },
+  "testCard": {
+    "normal": "正常",
+    "low": "低",
+    "high": "高",
+    "borderline": "临界",
+    "yourResult": "您的结果",
+    "normalRange": "正常范围",
+    "whatThisMeans": "含义说明"
+  },
+  "disclaimer": {
+    "bannerTitle": "重要免责声明",
+    "bannerText": "MedExplain 提供的解释仅用于教育目的，不用于诊断疾病或推荐治疗方案。请务必咨询专业医疗人员以获取医疗建议。",
+    "inline": "仅供教育参考，不能替代医疗建议。"
+  },
+  "footer": {
+    "disclaimerLabel": "免责声明：",
+    "disclaimerText": "MedExplain 仅为教育工具，不提供医疗诊断、治疗建议或专业医疗意见。如有健康问题，请务必咨询专业医疗人员。所提供的解释为简化内容，可能无法涵盖完整的临床情况。",
+    "copyright": "MedExplain — 让您清晰理解报告。",
+    "poweredBy": "翻译技术支持"
+  },
+  "rangeBar": {
+    "normal": "正常："
+  }
+}

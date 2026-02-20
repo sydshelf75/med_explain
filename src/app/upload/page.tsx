@@ -17,6 +17,7 @@ import Footer from "@/components/Footer";
 import Disclaimer from "@/components/Disclaimer";
 import LanguageSelector from "@/components/LanguageSelector";
 import type { LanguageCode } from "@/lib/medicalDictionary";
+import { useTranslation } from "@/i18n/I18nProvider";
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
 const ACCEPTED_TYPES = {
@@ -27,6 +28,7 @@ const ACCEPTED_TYPES = {
 
 export default function UploadPage() {
     const router = useRouter();
+    const { t } = useTranslation();
     const [file, setFile] = useState<File | null>(null);
     const [language, setLanguage] = useState<LanguageCode>("en");
     const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -36,14 +38,14 @@ export default function UploadPage() {
         setError(null);
 
         if (rejectedFiles && (rejectedFiles as Array<unknown>).length > 0) {
-            setError("Please upload a PDF, JPG, or PNG file (max 10 MB).");
+            setError(t("upload.fileError"));
             return;
         }
 
         if (acceptedFiles.length > 0) {
             setFile(acceptedFiles[0]);
         }
-    }, []);
+    }, [t]);
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop,
@@ -75,7 +77,7 @@ export default function UploadPage() {
 
             if (!response.ok) {
                 const data = await response.json();
-                throw new Error(data.error || "Analysis failed. Please try again.");
+                throw new Error(data.error || t("upload.analysisError"));
             }
 
             const results = await response.json();
@@ -86,7 +88,7 @@ export default function UploadPage() {
             router.push("/report");
         } catch (err) {
             setError(
-                err instanceof Error ? err.message : "Something went wrong. Please try again."
+                err instanceof Error ? err.message : t("upload.genericError")
             );
             setIsAnalyzing(false);
         }
@@ -106,10 +108,10 @@ export default function UploadPage() {
                             className="text-3xl sm:text-4xl font-bold mb-3"
                             style={{ color: 'var(--foreground)' }}
                         >
-                            Upload your report
+                            {t("upload.title")}
                         </h1>
                         <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>
-                            Drop your lab report and we'll explain it in simple terms
+                            {t("upload.subtitle")}
                         </p>
                     </div>
 
@@ -140,11 +142,11 @@ export default function UploadPage() {
                                 <div>
                                     <p className="text-base font-semibold mb-1" style={{ color: 'var(--foreground)' }}>
                                         {isDragActive
-                                            ? "Drop your file here"
-                                            : "Drag & drop your report here"}
+                                            ? t("upload.dragActive")
+                                            : t("upload.dragDefault")}
                                     </p>
                                     <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
-                                        or click to browse • PDF, JPG, PNG (max 10 MB)
+                                        {t("upload.browseHint")}
                                     </p>
                                 </div>
                             </div>
@@ -198,10 +200,10 @@ export default function UploadPage() {
                         <div className="flex items-center justify-between p-4 rounded-2xl" style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
                             <div>
                                 <p className="text-sm font-semibold" style={{ color: 'var(--foreground)' }}>
-                                    Explanation language
+                                    {t("upload.langLabel")}
                                 </p>
                                 <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
-                                    We'll translate explanations into this language
+                                    {t("upload.langHint")}
                                 </p>
                             </div>
                             <LanguageSelector value={language} onChange={setLanguage} />
@@ -212,11 +214,10 @@ export default function UploadPage() {
                             <ShieldCheck size={18} className="mt-0.5 shrink-0" style={{ color: 'var(--status-normal)' }} />
                             <div>
                                 <p className="text-sm font-semibold" style={{ color: 'var(--foreground)' }}>
-                                    Your privacy is protected
+                                    {t("upload.privacyTitle")}
                                 </p>
                                 <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
-                                    Reports are processed in memory and immediately deleted. We never
-                                    store your medical data.
+                                    {t("upload.privacyDesc")}
                                 </p>
                             </div>
                         </div>
@@ -234,11 +235,11 @@ export default function UploadPage() {
                             {isAnalyzing ? (
                                 <>
                                     <Loader2 size={18} className="animate-spin" />
-                                    Analyzing your report...
+                                    {t("upload.analyzing")}
                                 </>
                             ) : (
                                 <>
-                                    Explain My Report
+                                    {t("upload.submitBtn")}
                                     <ArrowRight size={18} />
                                 </>
                             )}
