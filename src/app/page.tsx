@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { LOCALE_LABELS } from "@/i18n/I18nProvider";
 import {
   Upload,
   FileSearch,
@@ -144,11 +145,10 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <LangCard name="English" native="English" flag="🇬🇧" />
-              <LangCard name="Hindi" native="हिन्दी" flag="🇮🇳" />
-              <LangCard name="Tamil" native="தமிழ்" flag="🇮🇳" />
-              <LangCard name="Telugu" native="తెలుగు" flag="🇮🇳" />
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              {Object.entries(LOCALE_LABELS).map(([code, label]) => (
+                <LangCard key={code} name={label.name} native={label.nativeName} flag={label.flag} />
+              ))}
             </div>
           </div>
         </section>
