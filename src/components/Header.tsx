@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Globe, ChevronDown } from "lucide-react";
+import { Globe, ChevronDown, Home, FileUp } from "lucide-react";
 import { useTranslation, LOCALE_LABELS } from "@/i18n/I18nProvider";
 import { useState, useRef, useEffect } from "react";
 
@@ -22,7 +22,7 @@ export default function Header() {
                         height={32}
                         className="transition-all duration-300 group-hover:scale-105"
                     />
-                    <span className="text-lg font-bold tracking-tight" style={{ color: 'var(--foreground)' }}>
+                    <span className="hidden sm:inline text-lg font-bold tracking-tight" style={{ color: 'var(--foreground)' }}>
                         Med<span style={{ color: 'var(--primary)' }}>Explain</span>
                     </span>
                 </Link>
@@ -31,10 +31,12 @@ export default function Header() {
                 <div className="flex items-center gap-2">
                     <nav className="flex items-center gap-1">
                         <NavLink href="/" active={pathname === "/"}>
-                            {t("header.home")}
+                            <Home size={18} className="sm:hidden" />
+                            <span className="hidden sm:inline">{t("header.home")}</span>
                         </NavLink>
                         <NavLink href="/upload" active={pathname === "/upload"}>
-                            {t("header.uploadReport")}
+                            <FileUp size={18} className="sm:hidden" />
+                            <span className="hidden sm:inline">{t("header.uploadReport")}</span>
                         </NavLink>
                     </nav>
 
