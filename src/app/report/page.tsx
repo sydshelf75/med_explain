@@ -8,6 +8,7 @@ import {
     Loader2,
     FileWarning,
     ArrowLeft,
+    Activity,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -39,7 +40,6 @@ export default function ReportPage() {
     const [originalExplanations, setOriginalExplanations] = useState<string[]>([]);
 
     useEffect(() => {
-        // Load results from sessionStorage
         const stored = sessionStorage.getItem("medexplain_results");
         const storedLang = sessionStorage.getItem("medexplain_language") as LanguageCode;
 
@@ -57,14 +57,12 @@ export default function ReportPage() {
         }
     }, [router]);
 
-    // Handle language switch
     const handleLanguageChange = async (newLang: LanguageCode) => {
         if (!results || newLang === language) return;
 
         setLanguage(newLang);
 
         if (newLang === "en") {
-            // Restore original English explanations
             setResults({
                 ...results,
                 tests: results.tests.map((t, i) => ({
@@ -75,7 +73,6 @@ export default function ReportPage() {
             return;
         }
 
-        // Translate via API
         setIsTranslating(true);
         try {
             const response = await fetch("/api/translate", {
@@ -155,38 +152,36 @@ export default function ReportPage() {
         );
     }
 
-    // Count statuses
-    const statusCounts = results.tests.reduce(
-        (acc, t) => {
-            acc[t.status]++;
-            return acc;
-        },
-        { normal: 0, low: 0, high: 0, borderline: 0 } as Record<TestStatus, number>
-    );
+
 
     return (
         <div className="min-h-screen flex flex-col" style={{ background: 'var(--background)' }}>
             <Header />
 
-            <main className="flex-1 pt-28 pb-16 px-6">
-                <div className="mx-auto max-w-4xl">
-                    {/* Header section */}
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+            <main className="flex-1 pt-28 pb-16 px-4 sm:px-6">
+                <div className="mx-auto max-w-6xl">
+                    {/* ── Page Header ── */}
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10">
                         <div>
                             <Link
                                 href="/upload"
-                                className="inline-flex items-center gap-1 text-sm no-underline mb-3 transition-colors"
+                                className="inline-flex items-center gap-1.5 text-sm no-underline mb-3 transition-colors hover:gap-2"
                                 style={{ color: 'var(--text-muted)' }}
                             >
                                 <ArrowLeft size={14} />
-                                Upload another
+                                Upload another report
                             </Link>
-                            <h1 className="text-3xl font-bold" style={{ color: 'var(--foreground)' }}>
-                                Your Report Explained
+                            <h1 className="text-4xl font-extrabold tracking-tight" style={{ color: 'var(--foreground)' }}>
+                                Your Report,{" "}
+                                <span style={{ color: 'var(--primary)' }}>Explained</span>
                             </h1>
+                            <p className="mt-2 text-base" style={{ color: 'var(--text-secondary)' }}>
+                                We analyzed your medical report and found <strong>{results.tests.length}</strong> test results.
+                                Here&apos;s what they mean in plain language.
+                            </p>
                         </div>
 
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-3 shrink-0">
                             {isTranslating && (
                                 <Loader2 size={16} className="animate-spin" style={{ color: 'var(--primary)' }} />
                             )}
@@ -194,42 +189,18 @@ export default function ReportPage() {
                         </div>
                     </div>
 
-                    {/* Summary badges */}
-                    <div className="flex flex-wrap gap-3 mb-8">
-                        <SummaryBadge
-                            label="Tests Found"
-                            count={results.tests.length}
-                            color="var(--primary)"
-                            bg="var(--primary-glow)"
-                        />
-                        {statusCounts.normal > 0 && (
-                            <SummaryBadge
-                                label="Normal"
-                                count={statusCounts.normal}
-                                color="var(--status-normal)"
-                                bg="var(--status-normal-bg)"
-                            />
-                        )}
-                        {statusCounts.borderline > 0 && (
-                            <SummaryBadge
-                                label="Borderline"
-                                count={statusCounts.borderline}
-                                color="var(--status-borderline)"
-                                bg="var(--status-borderline-bg)"
-                            />
-                        )}
-                        {(statusCounts.low > 0 || statusCounts.high > 0) && (
-                            <SummaryBadge
-                                label="Abnormal"
-                                count={statusCounts.low + statusCounts.high}
-                                color="var(--status-abnormal)"
-                                bg="var(--status-abnormal-bg)"
-                            />
-                        )}
+
+                    {/* ── Section Divider ── */}
+                    <div className="flex items-center gap-3 mb-8">
+                        <Activity size={18} style={{ color: 'var(--primary)' }} />
+                        <h2 className="text-xl font-bold" style={{ color: 'var(--foreground)' }}>
+                            Detailed Results
+                        </h2>
+                        <div className="flex-1 h-px" style={{ background: 'var(--border)' }} />
                     </div>
 
-                    {/* Test result cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
+                    {/* ── Test Result Cards (single column, full width) ── */}
+                    <div className="flex flex-col gap-6 mb-12">
                         {results.tests.map((test, index) => (
                             <TestResultCard
                                 key={test.testName}
@@ -244,7 +215,7 @@ export default function ReportPage() {
                         ))}
                     </div>
 
-                    {/* Disclaimer */}
+                    {/* ── Disclaimer ── */}
                     <Disclaimer variant="banner" />
                 </div>
             </main>
@@ -254,24 +225,3 @@ export default function ReportPage() {
     );
 }
 
-function SummaryBadge({
-    label,
-    count,
-    color,
-    bg,
-}: {
-    label: string;
-    count: number;
-    color: string;
-    bg: string;
-}) {
-    return (
-        <span
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold"
-            style={{ background: bg, color }}
-        >
-            <span className="text-lg font-bold">{count}</span>
-            {label}
-        </span>
-    );
-}

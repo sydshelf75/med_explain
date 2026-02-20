@@ -1,6 +1,6 @@
 "use client";
 
-import { TrendingDown, TrendingUp, CheckCircle, AlertTriangle } from "lucide-react";
+import { TrendingDown, TrendingUp, CheckCircle, AlertTriangle, Info } from "lucide-react";
 import type { TestStatus } from "@/lib/explanationEngine";
 
 interface TestResultCardProps {
@@ -20,6 +20,7 @@ const STATUS_CONFIG: Record<
         color: string;
         bgColor: string;
         icon: typeof CheckCircle;
+        gradient: string;
     }
 > = {
     normal: {
@@ -27,24 +28,28 @@ const STATUS_CONFIG: Record<
         color: "var(--status-normal)",
         bgColor: "var(--status-normal-bg)",
         icon: CheckCircle,
+        gradient: "linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,197,94,0.02))",
     },
     low: {
         label: "Low",
         color: "var(--status-abnormal)",
         bgColor: "var(--status-abnormal-bg)",
         icon: TrendingDown,
+        gradient: "linear-gradient(135deg, rgba(239,68,68,0.08), rgba(239,68,68,0.02))",
     },
     high: {
         label: "High",
         color: "var(--status-abnormal)",
         bgColor: "var(--status-abnormal-bg)",
         icon: TrendingUp,
+        gradient: "linear-gradient(135deg, rgba(239,68,68,0.08), rgba(239,68,68,0.02))",
     },
     borderline: {
         label: "Borderline",
         color: "var(--status-borderline)",
         bgColor: "var(--status-borderline-bg)",
         icon: AlertTriangle,
+        gradient: "linear-gradient(135deg, rgba(245,158,11,0.08), rgba(245,158,11,0.02))",
     },
 };
 
@@ -66,64 +71,87 @@ export default function TestResultCard({
             style={{
                 background: 'var(--surface)',
                 border: '1px solid var(--border)',
-                boxShadow: 'var(--shadow-md)',
+                boxShadow: 'var(--shadow-lg)',
                 animationDelay: `${index * 0.1}s`,
                 opacity: 0,
                 animationFillMode: 'forwards',
             }}
         >
-            {/* Header bar with status color */}
-            <div className="h-1" style={{ background: config.color }} />
+            {/* Accent gradient bar */}
+            <div className="h-1.5" style={{ background: `linear-gradient(90deg, ${config.color}, transparent)` }} />
 
-            <div className="p-5">
-                {/* Test name + status badge */}
-                <div className="flex items-start justify-between gap-3 mb-4">
-                    <h3 className="text-lg font-semibold" style={{ color: 'var(--foreground)' }}>
-                        {testName}
-                    </h3>
-                    <span
-                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold shrink-0"
-                        style={{ background: config.bgColor, color: config.color }}
-                    >
-                        <StatusIcon size={13} />
-                        {config.label}
-                    </span>
+            <div className="flex flex-col lg:flex-row">
+                {/* Left Panel — Data & Visualization */}
+                <div className="flex-1 p-6 lg:p-8" style={{ background: config.gradient }}>
+                    {/* Header: test name + status */}
+                    <div className="flex items-start justify-between gap-3 mb-6">
+                        <h3 className="text-xl font-bold tracking-tight" style={{ color: 'var(--foreground)' }}>
+                            {testName}
+                        </h3>
+                        <span
+                            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold shrink-0 uppercase tracking-wide"
+                            style={{ background: config.bgColor, color: config.color }}
+                        >
+                            <StatusIcon size={14} />
+                            {config.label}
+                        </span>
+                    </div>
+
+                    {/* Large Value Display */}
+                    <div className="flex items-end gap-6 mb-6">
+                        <div>
+                            <p className="text-xs font-medium uppercase tracking-wider mb-1.5" style={{ color: 'var(--text-muted)' }}>
+                                Your Result
+                            </p>
+                            <div className="flex items-baseline gap-2">
+                                <span className="text-5xl font-extrabold tabular-nums" style={{ color: config.color }}>
+                                    {patientValue}
+                                </span>
+                                <span className="text-base font-medium" style={{ color: 'var(--text-muted)' }}>
+                                    {unit}
+                                </span>
+                            </div>
+                        </div>
+                        <div className="pb-1.5">
+                            <p className="text-xs font-medium uppercase tracking-wider mb-1.5" style={{ color: 'var(--text-muted)' }}>
+                                Normal Range
+                            </p>
+                            <span className="text-2xl font-bold tabular-nums" style={{ color: 'var(--text-secondary)' }}>
+                                {normalRange.low}–{normalRange.high}
+                            </span>
+                            <span className="text-sm font-medium ml-1.5" style={{ color: 'var(--text-muted)' }}>
+                                {unit}
+                            </span>
+                        </div>
+                    </div>
+
+                    {/* Range Bar */}
+                    <div>
+                        <RangeBar
+                            value={patientValue}
+                            low={normalRange.low}
+                            high={normalRange.high}
+                            statusColor={config.color}
+                        />
+                    </div>
                 </div>
 
-                {/* Values */}
-                <div className="grid grid-cols-2 gap-3 mb-4">
-                    <div className="p-3 rounded-xl" style={{ background: 'var(--background)' }}>
-                        <p className="text-xs mb-1" style={{ color: 'var(--text-muted)' }}>
-                            Your Value
-                        </p>
-                        <p className="text-lg font-bold" style={{ color: config.color }}>
-                            {patientValue} <span className="text-xs font-normal" style={{ color: 'var(--text-muted)' }}>{unit}</span>
+                {/* Right Panel — Explanation */}
+                <div
+                    className="lg:w-[380px] xl:w-[420px] p-6 lg:p-8 flex flex-col justify-center"
+                    style={{
+                        borderLeft: '1px solid var(--border)',
+                        borderTop: 'none',
+                        background: 'var(--background)',
+                    }}
+                >
+                    <div className="flex items-center gap-2 mb-3">
+                        <Info size={15} style={{ color: config.color }} />
+                        <p className="text-xs font-bold uppercase tracking-wider" style={{ color: config.color }}>
+                            What this means
                         </p>
                     </div>
-                    <div className="p-3 rounded-xl" style={{ background: 'var(--background)' }}>
-                        <p className="text-xs mb-1" style={{ color: 'var(--text-muted)' }}>
-                            Normal Range
-                        </p>
-                        <p className="text-lg font-bold" style={{ color: 'var(--text-secondary)' }}>
-                            {normalRange.low}–{normalRange.high}{" "}
-                            <span className="text-xs font-normal" style={{ color: 'var(--text-muted)' }}>{unit}</span>
-                        </p>
-                    </div>
-                </div>
-
-                {/* Visual range bar */}
-                <div className="mb-4">
-                    <RangeBar
-                        value={patientValue}
-                        low={normalRange.low}
-                        high={normalRange.high}
-                        statusColor={config.color}
-                    />
-                </div>
-
-                {/* Explanation */}
-                <div className="p-4 rounded-xl" style={{ background: 'var(--background)', borderLeft: `3px solid ${config.color}` }}>
-                    <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                    <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                         {explanation}
                     </p>
                 </div>
@@ -143,7 +171,6 @@ function RangeBar({
     high: number;
     statusColor: string;
 }) {
-    // Calculate the bar range with padding
     const padding = (high - low) * 0.5;
     const barMin = Math.max(0, low - padding);
     const barMax = high + padding;
@@ -151,33 +178,47 @@ function RangeBar({
 
     const normalStart = ((low - barMin) / barRange) * 100;
     const normalWidth = ((high - low) / barRange) * 100;
-    const valuePos = Math.min(
-        100,
-        Math.max(0, ((value - barMin) / barRange) * 100)
-    );
+    const valuePos = Math.min(100, Math.max(0, ((value - barMin) / barRange) * 100));
 
     return (
-        <div className="relative h-2 rounded-full overflow-hidden" style={{ background: 'var(--border-light)' }}>
-            {/* Normal range zone */}
-            <div
-                className="absolute top-0 h-full rounded-full opacity-30"
-                style={{
-                    left: `${normalStart}%`,
-                    width: `${normalWidth}%`,
-                    background: 'var(--status-normal)',
-                }}
-            />
-            {/* Value marker */}
-            <div
-                className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full border-2 transition-all duration-500"
-                style={{
-                    left: `${valuePos}%`,
-                    transform: `translate(-50%, -50%)`,
-                    background: statusColor,
-                    borderColor: 'var(--surface)',
-                    boxShadow: `0 0 8px ${statusColor}`,
-                }}
-            />
+        <div>
+            <div className="flex items-center justify-between mb-2">
+                <span className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>
+                    {barMin.toFixed(0)}
+                </span>
+                <span className="text-xs font-medium px-2 py-0.5 rounded-full" style={{
+                    color: 'var(--status-normal)',
+                    background: 'var(--status-normal-bg)',
+                }}>
+                    Normal: {low}–{high}
+                </span>
+                <span className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>
+                    {barMax.toFixed(0)}
+                </span>
+            </div>
+            <div className="relative h-3 rounded-full overflow-hidden" style={{ background: 'var(--border-light)' }}>
+                {/* Normal range zone */}
+                <div
+                    className="absolute top-0 h-full rounded-full"
+                    style={{
+                        left: `${normalStart}%`,
+                        width: `${normalWidth}%`,
+                        background: 'var(--status-normal)',
+                        opacity: 0.2,
+                    }}
+                />
+                {/* Value marker */}
+                <div
+                    className="absolute top-1/2 w-4 h-4 rounded-full border-2 transition-all duration-700"
+                    style={{
+                        left: `${valuePos}%`,
+                        transform: 'translate(-50%, -50%)',
+                        background: statusColor,
+                        borderColor: 'var(--surface)',
+                        boxShadow: `0 0 10px ${statusColor}, 0 0 20px ${statusColor}40`,
+                    }}
+                />
+            </div>
         </div>
     );
 }
