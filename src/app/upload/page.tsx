@@ -11,11 +11,13 @@ import {
     Loader2,
     ShieldCheck,
     ArrowRight,
+    Camera,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Disclaimer from "@/components/Disclaimer";
 import LanguageSelector from "@/components/LanguageSelector";
+import CameraCapture from "@/components/CameraCapture";
 import type { LanguageCode } from "@/lib/medicalDictionary";
 import { useTranslation } from "@/i18n/I18nProvider";
 
@@ -33,6 +35,7 @@ export default function UploadPage() {
     const [language, setLanguage] = useState<LanguageCode>("en");
     const [isAnalyzing, setIsAnalyzing] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [showCamera, setShowCamera] = useState(false);
 
     const onDrop = useCallback((acceptedFiles: File[], rejectedFiles: unknown[]) => {
         setError(null);
@@ -92,6 +95,12 @@ export default function UploadPage() {
             );
             setIsAnalyzing(false);
         }
+    };
+
+    const handleCameraCapture = (capturedFile: File) => {
+        setFile(capturedFile);
+        setShowCamera(false);
+        setError(null);
     };
 
     const isImage = file?.type.startsWith("image/");
@@ -184,6 +193,40 @@ export default function UploadPage() {
                         )}
                     </div>
 
+                    {/* Scan with Camera button */}
+                    <div className="mt-4 flex items-center gap-3">
+                        <div className="flex-1 h-px" style={{ background: 'var(--border)' }} />
+                        <span className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>
+                            {t("upload.orText")}
+                        </span>
+                        <div className="flex-1 h-px" style={{ background: 'var(--border)' }} />
+                    </div>
+
+                    <button
+                        onClick={() => setShowCamera(true)}
+                        className="mt-4 w-full flex items-center justify-center gap-3 py-4 rounded-2xl text-sm font-semibold transition-all duration-300 hover:scale-[1.01] group"
+                        style={{
+                            background: 'var(--surface)',
+                            border: '1px solid var(--border)',
+                            color: 'var(--foreground)',
+                        }}
+                    >
+                        <div
+                            className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                            style={{ background: 'var(--primary-glow)', color: 'var(--primary)' }}
+                        >
+                            <Camera size={20} />
+                        </div>
+                        <div className="text-left">
+                            <p className="text-sm font-semibold" style={{ color: 'var(--foreground)' }}>
+                                {t("upload.cameraBtnLabel")}
+                            </p>
+                            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
+                                {t("upload.cameraBtnHint")}
+                            </p>
+                        </div>
+                    </button>
+
                     {/* Error message */}
                     {error && (
                         <div
@@ -253,6 +296,14 @@ export default function UploadPage() {
             </main>
 
             <Footer />
+
+            {/* Camera overlay */}
+            {showCamera && (
+                <CameraCapture
+                    onCapture={handleCameraCapture}
+                    onClose={() => setShowCamera(false)}
+                />
+            )}
         </div>
     );
 }

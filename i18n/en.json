@@ -47,7 +47,16 @@
         "analyzing": "Analyzing your report...",
         "submitBtn": "Explain My Report",
         "genericError": "Something went wrong. Please try again.",
-        "analysisError": "Analysis failed. Please try again."
+        "analysisError": "Analysis failed. Please try again.",
+        "orText": "or",
+        "cameraBtnLabel": "Scan with Camera",
+        "cameraBtnHint": "Use your phone camera to capture the report",
+        "cameraPermDenied": "Camera access was denied. Please allow camera permissions in your browser settings and try again.",
+        "cameraNotFound": "No camera found on this device.",
+        "cameraCapturing": "Position your report within the frame and tap capture",
+        "cameraRetake": "Retake",
+        "cameraUsePhoto": "Use this photo",
+        "cameraClose": "Close"
     },
     "report": {
         "loading": "Loading your results...",
