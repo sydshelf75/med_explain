@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D9488;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14B8A6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#22D3EE;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect x="2" y="2" width="60" height="60" rx="14" ry="14" fill="url(#g1)"/>
+
+  <!-- Document shape -->
+  <rect x="14" y="10" width="28" height="36" rx="4" ry="4" fill="white" opacity="0.25"/>
+  <rect x="12" y="8" width="28" height="36" rx="4" ry="4" fill="white" opacity="0.9"/>
+
+  <!-- Medical cross -->
+  <rect x="21" y="15" width="10" height="24" rx="2" fill="url(#g1)"/>
+  <rect x="16" y="22" width="20" height="10" rx="2" fill="url(#g1)"/>
+
+  <!-- Magnifying glass -->
+  <circle cx="42" cy="42" r="12" stroke="white" stroke-width="3" fill="url(#g2)" fill-opacity="0.3"/>
+  <line x1="50" y1="50" x2="58" y2="58" stroke="white" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Checkmark inside magnifier -->
+  <path d="M37 42 L40 46 L47 38" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

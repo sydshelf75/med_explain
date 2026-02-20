@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Activity, Globe, ChevronDown } from "lucide-react";
+import { Globe, ChevronDown } from "lucide-react";
 import { useTranslation, LOCALE_LABELS } from "@/i18n/I18nProvider";
 import { useState, useRef, useEffect } from "react";
 
@@ -15,12 +15,13 @@ export default function Header() {
             <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-3">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 no-underline group">
-                    <div
-                        className="flex items-center justify-center rounded-lg p-2 transition-all duration-300 group-hover:scale-105"
-                        style={{ background: 'var(--primary-glow)', color: 'var(--primary)' }}
-                    >
-                        <Activity size={22} strokeWidth={2.5} />
-                    </div>
+                    <img
+                        src="/favicon.svg"
+                        alt="MedExplain Logo"
+                        width={32}
+                        height={32}
+                        className="transition-all duration-300 group-hover:scale-105"
+                    />
                     <span className="text-lg font-bold tracking-tight" style={{ color: 'var(--foreground)' }}>
                         Med<span style={{ color: 'var(--primary)' }}>Explain</span>
                     </span>

@@ -25,6 +25,10 @@ export const metadata: Metadata = {
     "multilingual",
     "explanation",
   ],
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
