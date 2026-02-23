@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
     }
 }
 
-const SANTA_AI_URL = "http://localhost:8000";
+const SANTA_AI_URL = process.env.SANTA_AI_URL;
 
 /**
  * Extract text from a PDF or image file via Santa AI service.
